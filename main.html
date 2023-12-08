@@ -1,0 +1,370 @@
+<html>
+<head>
+  <script src="md5.js"></script>
+  <script src="md5.min.js"></script>
+  <title>function hash</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/core.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/sha256.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/sha1.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/hmac-sha1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/hmac-sha224.min.js"></script>  <!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/hmac-sha256.min.js"></script>   
+ -->
+
+  <script src="node_modules/locutus/php/strings/sha1.js"></script>
+  <script src="node_modules/forge/forge.js"></script>
+  <script src="node_modules/hash.js/lib/hash/sha/512.js"></script>
+  <script src="node_modules/hash.js/lib/hash/sha/224.js"></script>
+
+  <script src="node_modules/node-forge"></script>
+  <script src="https://cdn.jsdelivr.net/npm/node-forge@0.7.0/dist/forge.min.js"></script>
+  <script src="https://unpkg.com/node-forge@0.7.0/dist/forge.min.js"></script>
+  <script src="node_modules/js-md4/src/md4.js"></script>
+  <script src="node_modules/node-forge/lib/sha1.js"></script>
+
+  <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/hmac-md5.js"></script>
+  <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/hmac-sha1.js"></script>
+  <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/hmac-sha256.js"></script>
+  <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/hmac-sha224.js"></script>
+
+  <script src="node_modules/crypto-js"></script>
+
+  <script src="node_modules/crypto-js/hmac-md5.js"></script>
+  <script src="node_modules/crypto-js/hmac-sha1.js"></script>
+  <script src="node_modules/crypto-js/hmac-sha256.js"></script>
+  <script src="node_modules/crypto-js/hmac-sha224.js"></script>
+  <script src="node_modules/crypto-js/sha512.js"></script>
+
+  <script src="node_modules/crypto-js/hmac.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/hmac-sha512.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/hmac-sha224.js"></script>
+
+
+
+
+
+  <script type="text/javascript" src="path-to/bower_components/crypto-js/crypto-js.js"></script>
+
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</head>
+
+<style>
+  body{
+    background-color: white;
+  }
+  h1{
+    text-align: center;
+  }
+  #izq{
+    border: 2px solid black;
+    background-color: rgb(217, 108, 113);
+    
+  }
+  #der{
+    border: 2px solid black;
+    background-color: rgb(249, 174, 87);
+  }
+  label{
+    font-size: 1.4rem;
+    font-family: Helvetica, Arial, sans-serif;
+  }
+  h1{
+    font-size: 1.4rem;
+    color: blueviolet;
+    font-family: Helvetica, Arial, sans-serif;
+  }
+</style>
+<body>
+
+
+
+  <h1>Calculadora Hash</h1>
+  <h1>Henry Aron Yanqui Vera</h1>
+
+  <div class="container" class="form">
+    <div class="row">
+      <div class="col-sm" id="izq">
+        <div>
+          <label for="texto">Ingrese la cadena : </label> <br>
+          <textarea name="cadena" id="cadena" cols="30" rows="4"></textarea>
+        </div>
+        <div>
+          <button type="button" id="button" name="button" onclick="HASHGENERADOR()" class="btn btn-success">Hash</button>
+          <button type="button" id="reload" name="reload" onclick="RELOAD()" class="btn btn-light">CLEAR</button>
+        </div>
+        <div>
+          <div>
+            <label for="md4">Md4</label><br>
+            <textarea name="md4" id="md4" cols="30" rows="5"disabled></textarea>
+          </div>
+
+          <div>
+            <label for="md5">Md5</label><br>
+            <textarea name="md5" id="md5" cols="30" rows="5"disabled></textarea>
+          </div>
+          <div>
+            <label for="sha1">Sha1</label><br>
+            <textarea name="sha1" id="sha1" cols="30" rows="5"disabled></textarea>
+          </div>
+          <div>
+            <label for="sha256">Sha256</label><br>
+            <textarea name="sha256" id="sha256" cols="30" rows="5"disabled></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm" id="der">
+        <div class="row">
+          <div class="col-sm">
+            <label for="texto">Ingrese la cadena</label><br>
+            <textarea name="cadenahmac" id="cadenahmac" cols="30" rows="5"></textarea>
+          </div>
+          <div class="col-sm">
+            <label for="texto">Ingrese la clave</label><br>
+            <textarea name="clave" id="clave" cols="30" rows="5"></textarea>
+          </div>
+          <div class="row">
+            <div class="col-sm" >
+              <button type="button" onclick="HMACGENERADOR()" class="btn btn-success">HMAC</button><br>
+
+            </div>
+            <div class="col-sm">
+              <button type="button" onclick="RELOAD()" class="btn btn-light">CLEAR</button>
+            </div>
+          </div>
+
+          <div>
+            <label for="hmacmd5">HmacMd5</label><br>
+            <textarea name="hmacmd5" id="hmacmd5" cols="30" rows="5" disabled></textarea>
+          </div>
+          <br>
+          <div>
+            <label for="hmacsha1">HmacSha1</label><br>
+            <textarea name="hmacsha1" id="hmacsha1" cols="30" rows="5"disabled></textarea>
+          </div>
+          <br>
+          <div>
+            <label for="hmacsha256">HmacSha256</label> <br>
+            <textarea name="hmacsha256" id="hmacsha256" cols="30" rows="5"disabled></textarea>
+          </div>
+          <div>
+            <label for="hmacsha512">HmacSha512</label> <br>
+            <textarea name="hmacsha512" id="hmacsha512" cols="30" rows="5"disabled></textarea>
+          </div>
+          <div>
+            <label for="hmacsha224">HmacSha224</label> <br>
+            <textarea name="hmacsha224" id="hmacsha224" cols="30" rows="5"disabled></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+
+  function HASHGENERADOR()
+  {
+
+    var texto=document.getElementById('cadena').value;
+
+    //MD4
+    var hash2 = md4.update(texto);
+    document.getElementById("md4").value=hash2;
+    //console.log("md4 = " + hash2);
+
+
+    //MD5
+    var passhash = CryptoJS.MD5(texto).toString();
+    document.getElementById("md5").value=passhash;
+    //console.log("MD5 = " + passhash);
+
+    //SHA 1
+    function sha1(str) {
+
+      let hash
+      try {
+        const crypto = require('crypto')
+        const sha1sum = crypto.createHash('sha1')
+        sha1sum.update(str)
+        hash = sha1sum.digest('hex')
+      } catch (e) {
+        hash = undefined
+      }
+      if (hash !== undefined) {
+        return hash
+      }
+      const _rotLeft = function (n, s) {
+        const t4 = (n << s) | (n >>> (32 - s))
+        return t4
+      }
+      const _cvtHex = function (val) {
+        let str = ''
+        let i
+        let v
+        for (i = 7; i >= 0; i--) {
+          v = (val >>> (i * 4)) & 0x0f
+          str += v.toString(16)
+        }
+        return str
+      }
+      let blockstart
+      let i, j
+      const W = new Array(80)
+      let H0 = 0x67452301
+      let H1 = 0xEFCDAB89
+      let H2 = 0x98BADCFE
+      let H3 = 0x10325476
+      let H4 = 0xC3D2E1F0
+      let A, B, C, D, E
+      let temp
+      // utf8_encode
+      str = unescape(encodeURIComponent(str))
+      const strLen = str.length
+      const wordArray = []
+      for (i = 0; i < strLen - 3; i += 4) {
+        j = str.charCodeAt(i) << 24 |
+          str.charCodeAt(i + 1) << 16 |
+          str.charCodeAt(i + 2) << 8 |
+          str.charCodeAt(i + 3)
+        wordArray.push(j)
+      }
+      switch (strLen % 4) {
+        case 0:
+          i = 0x080000000
+          break
+        case 1:
+          i = str.charCodeAt(strLen - 1) << 24 | 0x0800000
+          break
+        case 2:
+          i = str.charCodeAt(strLen - 2) << 24 | str.charCodeAt(strLen - 1) << 16 | 0x08000
+          break
+        case 3:
+          i = str.charCodeAt(strLen - 3) << 24 |
+            str.charCodeAt(strLen - 2) << 16 |
+            str.charCodeAt(strLen - 1) <<
+            8 | 0x80
+          break
+      }
+      wordArray.push(i)
+      while ((wordArray.length % 16) !== 14) {
+        wordArray.push(0)
+      }
+      wordArray.push(strLen >>> 29)
+      wordArray.push((strLen << 3) & 0x0ffffffff)
+      for (blockstart = 0; blockstart < wordArray.length; blockstart += 16) {
+        for (i = 0; i < 16; i++) {
+          W[i] = wordArray[blockstart + i]
+        }
+        for (i = 16; i <= 79; i++) {
+          W[i] = _rotLeft(W[i - 3] ^ W[i - 8] ^ W[i - 14] ^ W[i - 16], 1)
+        }
+        A = H0
+        B = H1
+        C = H2
+        D = H3
+        E = H4
+        for (i = 0; i <= 19; i++) {
+          temp = (_rotLeft(A, 5) + ((B & C) | (~B & D)) + E + W[i] + 0x5A827999) & 0x0ffffffff
+          E = D
+          D = C
+          C = _rotLeft(B, 30)
+          B = A
+          A = temp
+        }
+        for (i = 20; i <= 39; i++) {
+          temp = (_rotLeft(A, 5) + (B ^ C ^ D) + E + W[i] + 0x6ED9EBA1) & 0x0ffffffff
+          E = D
+          D = C
+          C = _rotLeft(B, 30)
+          B = A
+          A = temp
+        }
+        for (i = 40; i <= 59; i++) {
+          temp = (_rotLeft(A, 5) + ((B & C) | (B & D) | (C & D)) + E + W[i] + 0x8F1BBCDC) & 0x0ffffffff
+          E = D
+          D = C
+          C = _rotLeft(B, 30)
+          B = A
+          A = temp
+        }
+        for (i = 60; i <= 79; i++) {
+          temp = (_rotLeft(A, 5) + (B ^ C ^ D) + E + W[i] + 0xCA62C1D6) & 0x0ffffffff
+          E = D
+          D = C
+          C = _rotLeft(B, 30)
+          B = A
+          A = temp
+        }
+        H0 = (H0 + A) & 0x0ffffffff
+        H1 = (H1 + B) & 0x0ffffffff
+        H2 = (H2 + C) & 0x0ffffffff
+        H3 = (H3 + D) & 0x0ffffffff
+        H4 = (H4 + E) & 0x0ffffffff
+      }
+      temp = _cvtHex(H0) + _cvtHex(H1) + _cvtHex(H2) + _cvtHex(H3) + _cvtHex(H4)
+      return temp.toLowerCase()
+    }
+
+    document.getElementById("sha1").value=sha1(texto);
+
+    //console.log("SHA1 = " + sha1("hola amigo"));
+
+
+
+
+
+    //SHA 2256
+    var input = new TextEncoder('utf-8').encode(texto);
+
+    // calcular el calculo de SHA-256
+    crypto.subtle.digest('SHA-256', input)
+      // Wait for completion
+      .then(function (digest) {
+        //Mostrar como cadena hexadecimal
+        var view = new DataView(digest);
+        var hexstr = '';
+        for (var i = 0; i < view.byteLength; i++) {
+
+          var b = view.getUint8(i);
+
+          //Esta cadena no entiendo....recorre bytes??
+          hexstr += '0123456789abcdef'[(b & 0xf0) >> 4];
+          hexstr += '0123456789abcdef'[(b & 0x0f)];
+        }
+
+        document.getElementById("sha256").value=hexstr;
+        //console.log("SHA_256 = " + hexstr);
+        // Otherwise, you can simply create an Uint8Array from the buffer:
+      })
+
+
+    //HMAC
+    //console.log("new sha 256 = " +CryptoJS.SHA256("hola amigo"));
+
+    
+    //console.log("hmac md5= " + CryptoJS.HmacMD5("hola amigo", "Jefe"));
+    //console.log("hmac sha1= " + CryptoJS.HmacSHA1("hola amigo", "Jefe"));
+    //console.log("hmac sha256= " + CryptoJS.HmacSHA256("hola amigo", "Jefe"));
+  }
+  function RELOAD()
+  {
+    window.location.reload();
+  }
+  function HMACGENERADOR(){
+    var hmac=document.getElementById("cadenahmac").value;
+    var key=document.getElementById("clave").value;
+
+    document.getElementById("hmacmd5").value=CryptoJS.HmacMD5(hmac,key );
+    document.getElementById("hmacsha1").value=CryptoJS.HmacSHA1(hmac,key );
+    document.getElementById("hmacsha256").value=CryptoJS.HmacSHA256(hmac,key );
+    document.getElementById("hmacsha512").value=CryptoJS.HmacSHA512(hmac,key );
+    document.getElementById("hmacsha224").value=CryptoJS.HmacSHA224(hmac,key );
+
+
+  }
+</script>
+
+</html>
