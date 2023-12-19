@@ -26,7 +26,7 @@ Function Hash-Calculator
 - Clon este repositorio usando :
 
     ```
-    `git clone <https://github.com/evargashe/CalculadoraHashOnline.git`>
+    `git clone <https://github.com/hyanquiv/Calculadora-Hash.git`>
 
     ```
 
